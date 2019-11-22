@@ -8,6 +8,9 @@ module.exports = {
       filename: './data/recipe-book.db4'
     },
     useNullAsDefulat: true,
+    migrations: {
+      directory: './data/migrations'
+    },
     pool : {
       afterCreate: (conn, done) => {
         conn.run('PRAGMA foreign_keys = ON', done);
