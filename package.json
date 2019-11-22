@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/sage-jordan/node-db4-challenge#readme",
   "dependencies": {
-    "knex": "^0.20.2"
+    "knex": "^0.20.2",
+    "sqlite3": "^4.1.0"
   }
 }
