@@ -9,10 +9,10 @@ exports.up = function(knex) {
       tbl.string('ingredient_name', 128).notNullable();
   })
   .createTable('recipe-ingredients', tbl => {
-      tbl.increments();
-      tbl.integer('recipe_id').unsigned().notNullable().references('id').inTable('recipes');
-      tbl.integer('ingredient_id').unsigned().notNullable().references('id').inTable('ingredients');
-      tbl.integer('quantity_of_ingredient').notNullable();
+      tbl.integer('recipe_id').unsigned().references('id').inTable('recipes');
+      tbl.integer('ingredient_id').unsigned().references('id').inTable('ingredients');
+      tbl.integer('quantity_of_ingredient');
+      tbl.primary(['recipe_id', 'ingredient_id']);
   })
 };
 
